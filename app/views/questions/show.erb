@@ -1,0 +1,11 @@
+<%= @question.title %><br>
+<%= @question.body %><br>
+
+<a href="/questions/<%= @question.id %>/answers/new">Add Answer</a><br>
+<a href="/comments/new">Add Comment</a>
+<br>
+<ul>
+  <% @answers.each do |answer| %>
+  <li><%= answer.body %></li>
+  <% end %>
+</ul>
