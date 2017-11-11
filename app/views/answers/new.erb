@@ -1,0 +1,6 @@
+<h1>Answers/New</h1>
+
+<form action="/questions/<%= @question.id %>/answers" method="POST">
+  <textarea name="answer[body]" rows="8" cols="40" placeholder="Enter your answer here..."></textarea><br>
+  <input type="submit" value="Submit Answer">
+</form>
