@@ -4,8 +4,8 @@ get '/questions/:question_id/answers/new' do
 end
 
 post '/questions/:question_id/answers' do
-  @answer = Answer.new(params[:answer])
   @question = Question.find(params[:question_id])
+  @answer = @question.answers.new(body: params[:body], user_id: current_user)
   if @answer.save
     redirect "/questions/#{@question.id}"
   else
